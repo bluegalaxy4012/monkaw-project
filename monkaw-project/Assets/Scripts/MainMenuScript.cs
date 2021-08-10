@@ -4,6 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
+using UnityEngine.UI;
 
 public class MainMenuScript : MonoBehaviourPunCallbacks
 {
@@ -13,6 +14,9 @@ public class MainMenuScript : MonoBehaviourPunCallbacks
     [SerializeField] private TMP_InputField CreateGameInput;
     [SerializeField] private TMP_InputField JoinGameInput;
     [SerializeField] private GameObject PlayButton;
+    [SerializeField] private Button CreateButton;
+    [SerializeField] private Button JoinButton;
+    public TMP_Text LoadingText;
     public void ExitFunction()
     {
         Application.Quit();
@@ -26,6 +30,29 @@ public class MainMenuScript : MonoBehaviourPunCallbacks
         UsernameMenu.SetActive(true);
         ConnectMenu.SetActive(false);
     }
+    private void Update()
+    {
+        if (CreateGameInput.text.Length < 2 || CreateGameInput.text.Length > 12)
+        {
+            CreateButton.interactable = false;
+        }
+        else
+        {
+            CreateButton.interactable = true;
+        }
+
+
+        if (JoinGameInput.text.Length < 2 || JoinGameInput.text.Length > 12)
+        {
+            JoinButton.interactable = false;
+        }
+        else
+        {
+            JoinButton.interactable = true;
+        }
+    }
+
+
     public override void OnConnectedToMaster()
     {
         PhotonNetwork.JoinLobby(TypedLobby.Default);
@@ -50,13 +77,28 @@ public class MainMenuScript : MonoBehaviourPunCallbacks
 
     public void CreateGame()
     {
-        PhotonNetwork.CreateRoom(CreateGameInput.text, new RoomOptions() { MaxPlayers = 2 }, null);
+        if (CreateGameInput.text.Length >= 2 && CreateGameInput.text.Length <= 12)
+        {
+            PhotonNetwork.CreateRoom(CreateGameInput.text, new RoomOptions() { MaxPlayers = 2 }, null);
+            LoadingText.text = "Loading...";
+            CreateButton.gameObject.SetActive(false);
+            JoinButton.gameObject.SetActive(false);
+
+        }
+        
+       
     }
     public void JoinGame()
     {
-        RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 2;
-        PhotonNetwork.JoinOrCreateRoom(JoinGameInput.text, roomOptions, TypedLobby.Default);
+        if (JoinGameInput.text.Length >= 2 && JoinGameInput.text.Length <= 12)
+        {
+            RoomOptions roomOptions = new RoomOptions();
+            roomOptions.MaxPlayers = 2;
+            PhotonNetwork.JoinOrCreateRoom(JoinGameInput.text, roomOptions, TypedLobby.Default);
+            LoadingText.text = "Loading...";
+            CreateButton.gameObject.SetActive(false);
+            JoinButton.gameObject.SetActive(false);
+        }
     }
     public void BackFunction()
     {
