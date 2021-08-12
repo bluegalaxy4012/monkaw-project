@@ -43,7 +43,7 @@ public class MovementScript : MonoBehaviour
     {
         horizontalMovement = Input.GetAxisRaw("Horizontal");
         verticalMovement = Input.GetAxisRaw("Vertical");
-        moveDirection = transform.forward * verticalMovement + transform.right * horizontalMovement;
+        moveDirection = transform.forward * verticalMovement + transform.right * horizontalMovement * 0.33f;
     }
     private bool OnSlope()
     {

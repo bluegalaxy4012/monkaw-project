@@ -27,13 +27,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.0000000069849175, y: -0, z: -1.6370901e-11, w: 1}
-  m_LocalPosition: {x: 0.001, y: -0, z: 0.184}
+  m_LocalRotation: {x: 0.033206977, y: -0.0038230487, z: -0.0001996465, w: 0.99944127}
+  m_LocalPosition: {x: 0.0020371452, y: 1.7908655, z: 0.24993125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1661236546634636071}
-  m_Father: {fileID: 1878075528}
-  m_RootOrder: 0
+  m_Father: {fileID: 5548324362164379498}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &963194227
 Camera:
@@ -189,9 +189,7 @@ Transform:
   m_LocalRotation: {x: 0.0065557985, y: -0.0043358793, z: 0.0005229415, w: 0.999969}
   m_LocalPosition: {x: 0.0015995512, y: 0.041219093, z: 0.055486053}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 963194228}
-  - {fileID: 6424562197839273830}
+  m_Children: []
   m_Father: {fileID: 6258647681550096695}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1087,16 +1085,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941775805876953822}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0, z: -0.126}
-  m_LocalScale: {x: 1.2500001, y: 1.25, z: 1.2500001}
+  m_LocalRotation: {x: 0.00019964653, y: 0.9994412, z: 0.03320698, w: 0.0038230487}
+  m_LocalPosition: {x: 0, y: 0, z: -0.027408972}
+  m_LocalScale: {x: 1.2499998, y: 1.25, z: 1.2499996}
   m_Children: []
-  m_Father: {fileID: 1878075528}
-  m_RootOrder: 1
+  m_Father: {fileID: 5548324362164379498}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.107, y: 0.494}
+  m_AnchoredPosition: {x: -0.103514895, y: 2.3044226}
   m_SizeDelta: {x: 2.4896, y: 0.4953}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &4176613364649910987
@@ -1833,9 +1831,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3926956185439051411}
-  m_LocalRotation: {x: -0.033206988, y: 0.0038230487, z: 0.00019964654, w: 0.9994412}
-  m_LocalPosition: {x: 0.0014956299, y: -0.42856124, z: 0.18727721}
-  m_LocalScale: {x: 1.2500001, y: 1.2499999, z: 1.2500001}
+  m_LocalRotation: {x: -0.03320698, y: 0.0038230487, z: 0.00019964662, w: 0.99944127}
+  m_LocalPosition: {x: 0.0014956302, y: -0.42856148, z: 0.18727727}
+  m_LocalScale: {x: 1.2500001, y: 1.2499996, z: 1.25}
   m_Children: []
   m_Father: {fileID: 963194228}
   m_RootOrder: 0
@@ -3663,9 +3661,9 @@ GameObject:
   - component: {fileID: 540388659}
   - component: {fileID: 540388662}
   - component: {fileID: 1755739956895449898}
-  - component: {fileID: 175745826687592275}
   - component: {fileID: 3653819161989660641}
-  - component: {fileID: 4630773038350436921}
+  - component: {fileID: 9182730019539380048}
+  - component: {fileID: 8744490501978437633}
   m_Layer: 0
   m_Name: Warrior_qr_1
   m_TagString: Untagged
@@ -3686,6 +3684,8 @@ Transform:
   m_Children:
   - {fileID: 2190678934658452306}
   - {fileID: 5585060353938819310}
+  - {fileID: 963194228}
+  - {fileID: 6424562197839273830}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3697,12 +3697,12 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8837401968786992505}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 529de0034dd345947a6594dccb1ab017, type: 3}
   m_Controller: {fileID: 9100000, guid: 9ce936a475c3fec4c8b33bf59f5196e7, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_UpdateMode: 1
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -3776,44 +3776,11 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 0
   ObservedComponents:
-  - {fileID: 175745826687592275}
-  - {fileID: 4630773038350436921}
+  - {fileID: 9182730019539380048}
+  - {fileID: 8744490501978437633}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &175745826687592275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8837401968786992505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PositionModel:
-    SynchronizeEnabled: 1
-    TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 4
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 4
-    ExtrapolateOption: 0
-    ExtrapolateSpeed: 1
-    ExtrapolateIncludingRoundTripTime: 1
-    ExtrapolateNumberOfStoredPositions: 1
-  m_RotationModel:
-    SynchronizeEnabled: 1
-    InterpolateOption: 2
-    InterpolateRotateTowardsSpeed: 180
-    InterpolateLerpSpeed: 4
-  m_ScaleModel:
-    SynchronizeEnabled: 0
-    InterpolateOption: 0
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 0
 --- !u!114 &3653819161989660641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3832,7 +3799,23 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   UsernameText: {fileID: 6928161952297603611}
---- !u!114 &4630773038350436921
+--- !u!114 &9182730019539380048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8837401968786992505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+  m_UseLocal: 1
+--- !u!114 &8744490501978437633
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3846,7 +3829,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 0
+    Name: isWalkingLeft
+  - Type: 4
+    SynchronizeType: 0
+    Name: isWalkingRight
+  - Type: 4
+    SynchronizeType: 0
+    Name: isRunning
+  - Type: 4
+    SynchronizeType: 0
+    Name: isWalkingForward
   m_SynchronizeLayers:
   - SynchronizeType: 0
     LayerIndex: 0

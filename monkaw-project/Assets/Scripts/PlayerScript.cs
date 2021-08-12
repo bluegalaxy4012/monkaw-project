@@ -11,6 +11,7 @@ public class PlayerScript : MonoBehaviour
     private GameObject door;
     public PhotonView photonview;
     private bool nearDoor = false;
+    private Animator animator;
     
     private int ok = 0;
     PhotonView pv;
@@ -22,6 +23,7 @@ public class PlayerScript : MonoBehaviour
     {
         cam = GetComponentInChildren<Camera>();
         pv = GetComponent<PhotonView>();
+        animator = GetComponent<Animator>(); 
         ok = 0;
         if(!pv.IsMine)
             UsernameText.text = pv.Owner.NickName;
@@ -37,11 +39,50 @@ public class PlayerScript : MonoBehaviour
         if (!pv.IsMine)
             return;
 
+
+        //for animator
+        bool wPressed = Input.GetKey(KeyCode.W);
+        bool aPressed = Input.GetKey(KeyCode.A);
+        bool dPressed = Input.GetKey(KeyCode.D);
+        bool shiftPressed = Input.GetKey(KeyCode.LeftShift);
+        bool isrunning = animator.GetBool("isRunning");
+        bool iswalkingforward = animator.GetBool("isWalkingForward");
+        bool iswalkingleft = animator.GetBool("isWalkingLeft");
+        bool iswalkingright = animator.GetBool("isWalkingRight");
+        bool iswalking = iswalkingforward || iswalkingleft || iswalkingright;
+
+
+
+
         nearDoor = Physics.CheckSphere(transform.position + new Vector3(0,0.81f,0), 3f, doorMask);
 
-           
+        if (!iswalkingforward && wPressed)
+        {
+                animator.SetBool("isWalkingForward", true);
+        }
+        if (iswalkingforward && !wPressed)
+        {
+            animator.SetBool("isWalkingForward", false);
+        }
+        if (!iswalkingleft && aPressed)
+        {
+            animator.SetBool("isWalkingLeft", true);
+        }
+        if (iswalkingleft && !aPressed)
+        {
+            animator.SetBool("isWalkingLeft", false);
+        }
+        if (!iswalkingright && dPressed)
+        {
+            animator.SetBool("isWalkingRight", true);
+        }
+        if (iswalkingright && !dPressed)
+        {
+            animator.SetBool("isWalkingRight", false);
+        }
 
-        if(Input.GetKeyDown(KeyCode.E) && nearDoor && Physics.Raycast(cam.transform.position,cam.transform.forward, out doorHit, 2))
+
+        if (Input.GetKeyDown(KeyCode.E) && nearDoor && Physics.Raycast(cam.transform.position,cam.transform.forward, out doorHit, 2))
         {
             Debug.Log("ddd0");
             if (doorHit.collider != null)
